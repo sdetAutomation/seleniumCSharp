@@ -7,7 +7,7 @@
 #       \/     \/    \/             \/                         \/     \/                    \/ 
 ```
 
-# seleniumCSharp
+# seleniumC#
 Selenium Startup Project for C# .NET
 
 
