@@ -45,8 +45,12 @@ Page object model is used in this framework.  Each web page will have its own ja
 
 Test web page
 -----
-    http://the-internet.herokuapp.com/      
-
+    http://the-internet.herokuapp.com/    
+        
+Continuous Integration(CI)
+------------
+A web hook has been setup with AppHarbor for all Push and Pull Requests.
+ 
  
 Selenium WebDriver
 ------------
