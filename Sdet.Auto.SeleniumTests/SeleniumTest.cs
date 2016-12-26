@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sdet.Auto.PageObjects;
+using Sdet.Auto.TestHelper;
+using System.Threading;
 
 namespace Sdet.Auto.SeleniumTests
 {
@@ -11,6 +13,7 @@ namespace Sdet.Auto.SeleniumTests
         public void TC0001_SmokeTest()
         {
             GuiHelper.OpenWebBrowser();
+            Thread.Sleep(3000);
 
         }
 

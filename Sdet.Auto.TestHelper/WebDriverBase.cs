@@ -22,8 +22,7 @@ namespace Sdet.Auto.TestHelper
                 ChromeOptions options = new ChromeOptions();
                 options.AddArguments("--start-maximized");
                 options.AddArguments("--disable-extensions");
-                //  todo: add proper chrome location code..  System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
-                driver = new ChromeDriver(options);
+                driver = new ChromeDriver(IoLibrary.GetBinPath(), options);
                 driver.Manage().Cookies.DeleteAllCookies();
             }
             else if (browser == "firefox")

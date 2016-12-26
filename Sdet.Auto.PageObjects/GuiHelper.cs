@@ -12,9 +12,7 @@ namespace Sdet.Auto.PageObjects
     {
         public static void OpenWebBrowser()
         {
-            Console.WriteLine(ConfigurationManager.AppSettings["webBrowser"]);
-            Console.WriteLine(ConfigurationManager.AppSettings["webUrl"]);
-            //WebDriverBase.GetWebDriver(ConfigurationManager.AppSettings["webBrowser"]);
+            WebDriverBase.GetWebDriver(ConfigurationManager.AppSettings["webBrowser"]);
         }
 
         public static void CloseWebBrowser()
