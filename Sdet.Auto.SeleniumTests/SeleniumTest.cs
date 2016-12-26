@@ -14,6 +14,7 @@ namespace Sdet.Auto.SeleniumTests
         {
             GuiHelper.OpenWebBrowser();
             Thread.Sleep(3000);
+            GuiHelper.CloseWebBrowser();
 
         }
 

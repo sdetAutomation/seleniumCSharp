@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Sdet.Auto.TestHelper;
 using System.Configuration;
+using Sdet.Auto.TestHelper;
 
 namespace Sdet.Auto.PageObjects
 {
-    public class GuiHelper
+    public class GuiHelper : TestHelper.WebDriverBase
     {
         public static void OpenWebBrowser()
         {
-            WebDriverBase.GetWebDriver(ConfigurationManager.AppSettings["webBrowser"]);
+            WebDriver.GetWebDriver(ConfigurationManager.AppSettings["webBrowser"]);
         }
 
         public static void CloseWebBrowser()
         {
-            //WebDriverBase.driver.Close;
-            //WebDriverBase.driver.quit();
+            Driver.Close();
+            Driver.Quit();
         }
     }
 }
