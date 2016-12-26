@@ -11,7 +11,7 @@ namespace Sdet.Auto.TestHelper
         public static void WriteLine(string text)
         {
             Console.WriteLine(" ");
-            Console.WriteLine($"### {text} ###");
+            Console.WriteLine(string.Format("### {0} ###", text));
         }
 
         public static void WritelineEnd()

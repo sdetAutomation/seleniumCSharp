@@ -60,7 +60,7 @@ namespace Sdet.Auto.TestHelper
             }
             else
             {
-                throw new Exception($"Browser Type {browser}, not Found, please add additional code for this desired WebDriver Type.");
+                throw new Exception(string.Format("Browser Type {0}, not Found, please add additional code for this desired WebDriver Type.", browser));
             }
         }
     }
