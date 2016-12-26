@@ -13,7 +13,7 @@ namespace Sdet.Auto.SeleniumTests
         public void TC0001_SmokeTest()
         {
             GuiHelper.OpenWebBrowser();
-            Thread.Sleep(3000);
+
             GuiHelper.CloseWebBrowser();
 
         }
