@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -62,6 +63,16 @@
       <Link>chromedriver.exe</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sdet.Auto.PageObjects\Sdet.Auto.PageObjects.csproj">
+      <Project>{9a3e9bd3-f242-48ee-916b-ebf050e1ca86}</Project>
+      <Name>Sdet.Auto.PageObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sdet.Auto.TestHelper\Sdet.Auto.TestHelper.csproj">
+      <Project>{62b77600-a4a9-49a1-8176-edceda8bf12b}</Project>
+      <Name>Sdet.Auto.TestHelper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

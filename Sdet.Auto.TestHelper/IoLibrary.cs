@@ -8,5 +8,16 @@ namespace Sdet.Auto.TestHelper
 {
     public class IoLibrary
     {
+        public static void WriteLine(string text)
+        {
+            Console.WriteLine(" ");
+            Console.WriteLine($"### {text} ###");
+        }
+
+        public static void WritelineEnd()
+        {
+            Console.WriteLine("############");
+            Console.WriteLine(" ");
+        }
     }
 }
