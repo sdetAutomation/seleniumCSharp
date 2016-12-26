@@ -20,13 +20,13 @@ This projet was written using Microsoft Visual Studio 2015 Community.
 
 Project Packages
 -----
-* PageObjects:  
+* Sdet.Auto.PageObjects:  
 Contains class files for each web page being tested.  Page element definitions / mappings, and functions for interacting with page elements.
  
-* SeleniumExtensions:  
+* WebDriverExtensions:  
 Contains helper function to instantiate WebDriver to the appropriate browser type.  In the future, WebDriverExensions class will contain helper functions to handle driver waits for page elements conditions. 
 
-* TestHelper:  
+* Sdet.Auto.TestHelper:  
     - ConfigSettings: contains helper functions for reading config.properties.  
     - IoLibrary: contains helper functions used across tests.  
     - LoggingLibrary: contains custom functions for comparing actual to expected conditions.  
