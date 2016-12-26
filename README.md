@@ -22,15 +22,13 @@ Project Packages
 -----
 * Sdet.Auto.PageObjects:  
 Contains class files for each web page being tested.  Page element definitions / mappings, and functions for interacting with page elements.
- 
-* WebDriverExtensions:  
-Contains helper function to instantiate WebDriver to the appropriate browser type.  In the future, WebDriverExensions class will contain helper functions to handle driver waits for page elements conditions. 
 
 * Sdet.Auto.TestHelper:  
-    - ConfigSettings: contains helper functions for reading config.properties.  
+    - ConfigSettings: contains helper functions for reading App.config.  
     - IoLibrary: contains helper functions used across tests.  
     - LoggingLibrary: contains custom functions for comparing actual to expected conditions.  
     - TestAssert: Is a custom assert, used to track if a verification point has failed.  The class variable is latched, once set to false it will remain false for the remainder of the test run. 
+    - WebDriverExtensions: Contains helper function to instantiate WebDriver to the appropriate browser type.  In the future, WebDriverExensions class will contain helper functions to handle driver waits for page elements conditions. 
 
 
 Visual Studio Project
