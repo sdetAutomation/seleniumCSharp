@@ -18,7 +18,7 @@ namespace Sdet.Auto.PageObjects
         public static void CloseWebBrowser()
         {
             Driver.Close();
-            Driver.Quit();
+            Driver.Dispose();
         }
     }
 }

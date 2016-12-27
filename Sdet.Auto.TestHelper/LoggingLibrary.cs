@@ -26,7 +26,7 @@ namespace Sdet.Auto.TestHelper
         public static bool CompareResultContains(String actual, String expected)
         {
 
-            if (actual == expected)
+            if (actual.Contains(expected))
             {
                 IoLibrary.WriteLine(String.Format("PASS: Actual({0}) | ExpectedToContain({1})", actual, expected));
                 return true;
