@@ -7,94 +7,63 @@ using System.Threading;
 namespace Sdet.Auto.SeleniumTests
 {
     [TestClass]
-    public class SeleniumTest
+    public class SeleniumTest : TestBaseClass
     {
         [TestMethod]
         public void TC0001_SmokeTest()
         {
             GuiHelper.OpenWebBrowser();
             Navigation.NavToWebPageUnderTest();
-            Thread.Sleep(3000);
+            HomePage.VerifyOnHomePage(TestAssert);
             GuiHelper.CloseWebBrowser();
-
         }
 
         [TestMethod]
         public void TC0002_ForgetPasswordTest()
         {
+            const string email = "sdet.testautomation@gmail.com";
+            const string expectedMsg = "Your e-mail's been sent!";
+
+            GuiHelper.OpenWebBrowser();
+            Navigation.NavToWebPageUnderTest();
+            HomePage.ClickForgetPassword();
+            ForgetPasswordPage.EnterEmail(email);
+            ForgetPasswordPage.ClickRetrieveButton();
+            EmailSentPage.VerifyEmailSent(TestAssert, expectedMsg);
+            GuiHelper.CloseWebBrowser();
         }
 
         [TestMethod]
         public void TC0003_FormAuthentication()
         {
+            const string userId = "tomsmith";
+            const string password = "SuperSecretPassword!";
+            const string expectedLoginMsg = "You logged into a secure area!";
+            const string expectedLogoutMsg = "You logged out of the secure area!";
+
+            GuiHelper.OpenWebBrowser();
+            Navigation.NavToWebPageUnderTest();
+            HomePage.ClickFormAuthentication();
+            LoginPage.EnterCredentials(userId, password);
+            SecureAreaPage.VerifyMessage(TestAssert, expectedLoginMsg);
+            SecureAreaPage.ClickLogoutButton();
+            LoginPage.VerifyMessage(TestAssert, expectedLogoutMsg);
+            GuiHelper.CloseWebBrowser();
         }
 
         [TestMethod]
         public void TC0004_FormAuthenticationBadInfo()
         {
+            const string userId = "sdetAutomatiom";
+            const string password = "pass@word";
+            const string expectedMsg = "Your username is invalid!";
+
+            GuiHelper.OpenWebBrowser();
+            Navigation.NavToWebPageUnderTest();
+            HomePage.ClickFormAuthentication();
+            LoginPage.EnterCredentials(userId, password);
+            LoginPage.VerifyMessage(TestAssert, expectedMsg);
+            GuiHelper.CloseWebBrowser();
         }
-
-    //    @Test
-    //public void TC0001_SmokeTest()
-    //    {
-
-    //        GuiHelper.OpenWebBrowser();
-    //        Navigation.NavToWebPageUnderTest();
-    //        HomePage.VerifyOnHomePage(testAssert);
-    //        GuiHelper.CloseWebBrowser();
-    //    }
-
-    //    @Test
-    //public void TC0002_ForgetPasswordTest()
-    //    {
-
-    //        final String email = "sdet.testautomation@gmail.com";
-    //        final String expectedMsg = "Your e-mail's been sent!";
-
-    //        GuiHelper.OpenWebBrowser();
-    //        Navigation.NavToWebPageUnderTest();
-    //        HomePage.ClickForgetPassword();
-    //        ForgetPasswordPage.EnterEmail(email);
-    //        ForgetPasswordPage.ClickRetrieveButton();
-    //        EmailSentPage.VerifyEmailSent(testAssert, expectedMsg);
-    //        GuiHelper.CloseWebBrowser();
-    //    }
-
-    //    @Test
-    //public void TC0003_FormAuthentication()
-    //    {
-
-    //        final String userId = "tomsmith";
-    //        final String password = "SuperSecretPassword!";
-    //        final String expectedLoginMsg = "You logged into a secure area!";
-    //        final String expectedLogoutMsg = "You logged out of the secure area!";
-
-    //        GuiHelper.OpenWebBrowser();
-    //        Navigation.NavToWebPageUnderTest();
-    //        HomePage.ClickFormAuthentication();
-    //        LoginPage.EnterCredentials(userId, password);
-    //        SecureAreaPage.VerifyMessage(testAssert, expectedLoginMsg);
-    //        SecureAreaPage.ClickLogoutButton();
-    //        LoginPage.VerifyMessage(testAssert, expectedLogoutMsg);
-    //        GuiHelper.CloseWebBrowser();
-    //    }
-
-    //    @Test
-    //public void TC0004_FormAuthenticationBadInfo()
-    //    {
-
-    //        final String userId = "sdetAutomatiom";
-    //        final String password = "pass@word";
-    //        final String expectedMsg = "Your username is invalid!";
-
-    //        GuiHelper.OpenWebBrowser();
-    //        Navigation.NavToWebPageUnderTest();
-    //        HomePage.ClickFormAuthentication();
-    //        LoginPage.EnterCredentials(userId, password);
-    //        LoginPage.VerifyMessage(testAssert, expectedMsg);
-    //        GuiHelper.CloseWebBrowser();
-    //    }
-
-
     }
 }

@@ -6,7 +6,33 @@ using System.Threading.Tasks;
 
 namespace Sdet.Auto.TestHelper
 {
-    class TestAssert
+    public class TestAssert
     {
+        private bool _pass;
+
+        public TestAssert()
+        {
+            this._pass = true;
+        }
+
+        public bool Pass
+        {
+            get
+            {
+                return _pass;
+            }
+            set 
+            {
+                CheckPass(value);
+            }
+        }
+
+        private void CheckPass(bool pass)
+        {
+            if (this._pass == true)
+            {
+                this._pass = pass;
+            }
+        }
     }
 }

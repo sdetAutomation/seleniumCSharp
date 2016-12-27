@@ -50,9 +50,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmailSentPage.cs" />
+    <Compile Include="ForgetPasswordPage.cs" />
     <Compile Include="GuiHelper.cs" />
+    <Compile Include="HomePage.cs" />
+    <Compile Include="LoginPage.cs" />
     <Compile Include="Navigation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecureAreaPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sdet.Auto.TestHelper\Sdet.Auto.TestHelper.csproj">
