@@ -49,6 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WebDriver.cs" />
     <Compile Include="WebDriverBase.cs" />
     <Compile Include="WebDriverExtensions.cs" />
     <Compile Include="ConfigSettings.cs" />
