@@ -12,6 +12,8 @@ namespace Sdet.Auto.SeleniumTests
         [TestInitialize]
         public void MyTestInitialize()
         {
+            IoLibrary.KillProcess("chromedriver");
+            IoLibrary.KillProcess("chrome");
             TestAssert = new TestAssert();
         }
 
