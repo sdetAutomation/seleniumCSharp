@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -25,6 +26,19 @@ namespace Sdet.Auto.TestHelper
         {
             string path = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembl‌​y().Location);
             return path;
+        }
+
+        public static void KillProcess(string processName)
+        {
+            var processes = Process.GetProcesses();
+
+            foreach (var process in processes)
+            {
+                if(process.ProcessName == processName)
+                {
+                    process.Kill();
+                }
+            }
         }
     }
 }

@@ -37,7 +37,7 @@ namespace Sdet.Auto.SeleniumTests
         public void TC0003_FormAuthentication()
         {
             const string userId = "tomsmith";
-            const string password = "seleniumCSharpPassword!";
+            const string password = "SuperSecretPassword!";
             const string expectedLoginMsg = "You logged into a secure area!";
             const string expectedLogoutMsg = "You logged out of the secure area!";
 

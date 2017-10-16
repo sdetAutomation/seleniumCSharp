@@ -27,7 +27,7 @@ namespace Sdet.Auto.PageObjects
         public static void VerifyOnHomePage(TestAssert testAssert)
         {
             string headerText = Driver.FindElement(By.CssSelector(txtHeader)).Text;
-            testAssert.Pass = LoggingLibrary.CompareResult(headerText, "Welcome to the Internet");
+            testAssert.Pass = LoggingLibrary.CompareResult(headerText, "Welcome to the-internet");
         }
     }
 }
